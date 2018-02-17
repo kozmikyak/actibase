@@ -1,0 +1,33 @@
+asn1crypto==0.24.0
+certifi==2018.1.18
+cffi==1.11.4
+chardet==3.0.4
+cryptography==2.1.4
+dj-database-url==0.3.0
+Django==2.0.1
+django-cors-headers==2.1.0
+django-model-utils==3.1.1
+django-versatileimagefield==1.8.1
+djangorestframework==3.7.7
+idna==2.6
+JSON-minify==0.3.0
+jsonschema==2.6.0
+lxml==4.1.1
+#olefile==0.45
+opencivicdata==2.1.1
+Pillow==4.3.0
+psycopg2==2.7.3.2
+pycparser==2.18
+pyOpenSSL==17.5.0
+pyopenstates==1.1.0
+pytz==2017.3
+requests==2.18.4
+scrapelib==1.1.0
+selenium==3.8.1
+six==1.11.0
+swapper==1.1.0
+tqdm==4.19.5
+urllib3==1.22
+xvfbwrapper==0.2.9
+-e git://github.com/opencivicdata/pupa.git#egg=pupa
+-e git://github.com/coderholic/django-cities.git#egg=django-cities
