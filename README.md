@@ -1,0 +1,2 @@
+# Actibase
+This repo is the core of the *Activist sites. Built primarily off of OpenCivicData's [pupa](https://github.com/opencivicdata/pupa) project, we are exploring interoperability with Django Cities as well.
