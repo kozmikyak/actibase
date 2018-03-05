@@ -36,6 +36,7 @@ class EventSerializer(serializers.ModelSerializer):
         depth = 1
 
 
+        
 ###################
 ## Organizations ##
 ###################
@@ -95,21 +96,9 @@ class OrgSerializer(serializers.ModelSerializer):
 
         
 
-"""        
-class minBillSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Bill
-        fields = ('identifier', 'sources', 'title', 'classification', 'subject', 'legislative_session',)
-        depth = 1
-        
-
-        
-"""
 ###########
 ## Bill  ##
 ###########
-
-
 
 class SponsorSerializer(serializers.RelatedField):
     def to_representation(self, value):
@@ -131,16 +120,6 @@ class BillSerializer(serializers.ModelSerializer):
         fields = ('id', 'identifier', 'sources', 'title', 'classification', 'subject', 'legislative_session', 'sponsorships', 'from_organization', 'actions')
         depth = 1
 
-"""        
-
-        
-class minPersonSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Person
-#        fields = '__all__'
-        fields = ('id', 'name',)
-        
-"""
 
 ############
 ## Posts  ##
@@ -204,18 +183,6 @@ class BillSponsorSerializer(serializers.RelatedField):
         else:
             pass
 
-"""        
-class SponsorSerializer(serializers.RelatedField):
-    def to_representation(self, value):
-        if isinstance(value.person, Person):
-            s = PeopleSerializer(value.person)
-            return s.data
-        elif isinstance(value.organization, Organization):
-            s = OrgSerializer(value.organization)
-            return s.data
-        else:
-            pass
-"""
 
 class PeopleSerializer(serializers.ModelSerializer):
     memberships = minMembershipSerializer(many=True)
@@ -232,3 +199,46 @@ class PersonSerializer(serializers.ModelSerializer):
         model = Person
         fields = ('id', 'name', 'image', 'memberships', 'billsponsorship_set', 'contact_details', 'biography', 'extras', 'votes', 'biography', 'extras')
         depth = 1
+
+
+
+
+##########
+# Extras #
+##########
+        
+"""        
+class SponsorSerializer(serializers.RelatedField):
+    def to_representation(self, value):
+        if isinstance(value.person, Person):
+            s = PeopleSerializer(value.person)
+            return s.data
+        elif isinstance(value.organization, Organization):
+            s = OrgSerializer(value.organization)
+            return s.data
+        else:
+            pass
+"""
+
+
+"""        
+
+        
+class minPersonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Person
+#        fields = '__all__'
+        fields = ('id', 'name',)
+        
+"""
+
+"""        
+class minBillSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Bill
+        fields = ('identifier', 'sources', 'title', 'classification', 'subject', 'legislative_session',)
+        depth = 1
+        
+
+        
+"""

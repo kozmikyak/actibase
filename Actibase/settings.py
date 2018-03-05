@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import sys
-sys.path.insert(0, '/websrv/actibase')
-#sys.path.insert(0, '/home/nkfx/ScreamFreely/MnActivist/server')
+#sys.path.insert(0, '/websrv/actibase')
+sys.path.insert(0, '/home/nkfx/ScreamFreely/ActiSites/MnActivist/server')
 import mnauth as KF
 
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,9 +24,10 @@ BASE_DIR = os.path.abspath(os.path.join(SITE_ROOT, ".."))
 SECRET_KEY = KF.secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
 # TEMPLATE_DEBUG = False
-#DEBUG = True
+DEBUG = True
+
 USE_X_FORWARDED_HOST = True
 ALLOWED_HOSTS = KF.allowed_hosts
 ROOT_URLCONF = KF.root_urlconf
@@ -125,8 +126,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Additional static file locations.
-STATICFILES_DIRS = [os.path.join(SITE_ROOT, 'static')]
-STATIC_ROOT = os.path.join(os.path.dirname(SITE_ROOT), 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+#STATIC_ROOT = os.path.join(os.path.dirname(SITE_ROOT), 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(SITE_ROOT, 'media')
