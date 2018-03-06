@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import sys
-#sys.path.insert(0, '/websrv/actibase')
-sys.path.insert(0, '/home/nkfx/ScreamFreely/ActiSites/MnActivist/server')
+sys.path.insert(0, '/websrv/actibase')
+#sys.path.insert(0, '/home/nkfx/ScreamFreely/ActiSites/MnActivist/server')
 import mnauth as KF
 
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

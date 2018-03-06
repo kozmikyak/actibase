@@ -94,7 +94,6 @@ class OrgMinSerializer(serializers.ModelSerializer):
         fields = ('id', 'name' )
         
 
-        
 class SponsorSerializer(serializers.RelatedField):
     def to_representation(self, value):
         if isinstance(value.person, Person):

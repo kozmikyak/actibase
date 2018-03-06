@@ -384,9 +384,8 @@ class MNBillScraper(Scraper, LXMLMixin):
             if 'committees' in action:
                 committee = action['committees']
                 act.add_related_entity(committee, 'organization')
-#                act.add_related_entity(
-#                    committee, 'organization',
-#                    entity_id=_make_pseudo_id(name=committee))
+                act.add_related_entity(
+                    committee, 'organization',)
 
         return bill
 
