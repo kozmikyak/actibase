@@ -3,7 +3,8 @@ import requests
 
 from pupa.scrape import Jurisdiction, Organization
 from .events import MinnesotaEventScraper
-from .people import MinnesotaPersonScraper
+#from .people import MinnesotaPersonScraper
+from .people_new import MNPersonScraper
 from .bills import MinnesotaBillScraper
 from .vote_events import MinnesotaVoteEventScraper
 
@@ -15,6 +16,7 @@ class Minnesota(Jurisdiction):
     url = "https://mn.gov"
     scrapers = {
 #        "people": MinnesotaPersonScraper,
+        "people": MNPersonScraper,        
 #        "bills": MinnesotaBillScraper,
         "events": MinnesotaEventScraper,
 #        "vote_events": MinnesotaVoteEventScraper,

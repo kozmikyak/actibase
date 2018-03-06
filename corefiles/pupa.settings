@@ -4,14 +4,18 @@ import importlib
 
 import dj_database_url
 
+#sys.path.insert(0, '/websrv/actibase')
+sys.path.insert(0, '/home/nkfx/ScreamFreely/ActiSites/MnActivist/server')
+import mnauth as KF
+
 #DATABASE_URL = os.environ.get('DATABASE_URL', 'postgis://pupa:pupa@localhost/opencivicdata')
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'mnactivate',
-        'USER': 'nkfx',
-        'PASSWORD': '',
+        'NAME': KF.dbname,
+        'USER': KF.dbuser,
+        'PASSWORD': KF.dbpasswd,
         'HOST': 'localhost',
         'PORT': '',
     },
