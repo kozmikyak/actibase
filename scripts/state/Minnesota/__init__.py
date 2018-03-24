@@ -4,10 +4,12 @@ import requests
 from pupa.scrape import Jurisdiction, Organization
 from .events import MinnesotaEventScraper
 #from .people import MinnesotaPersonScraper
-from .people_new import MNPersonScraper
+#from .people_new import MNPersonScraper
 from .bills import MinnesotaBillScraper
 from .vote_events import MinnesotaVoteEventScraper
-
+from .house import MNHouseScraper
+from .senate import MNSenateScraper
+from .comms import MNCommsScraper
 
 class Minnesota(Jurisdiction):
     division_id = "ocd-division/country:us/state:mn"
@@ -16,9 +18,11 @@ class Minnesota(Jurisdiction):
     url = "https://mn.gov"
     scrapers = {
 #        "people": MinnesotaPersonScraper,
-        "people": MNPersonScraper,        
+#        "people": MNPersonScraper,        
 #        "bills": MinnesotaBillScraper,
-        "events": MinnesotaEventScraper,
+        "house": MNHouseScraper,
+        "senate": MNSenateScraper,
+        "comms": MNCommsScraper,                
 #        "vote_events": MinnesotaVoteEventScraper,
     }
 
