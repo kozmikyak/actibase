@@ -29,6 +29,7 @@ class Minnesota(Jurisdiction):
         "bills": MNBillScraper,
         "committees": MNCommitteeScraper,
         "people": MNPersonScraper,
+        
 #        "vote_events": MNVoteScraper,
         # "events": MNEventScraper,
     }
