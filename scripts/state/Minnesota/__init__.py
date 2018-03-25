@@ -4,7 +4,7 @@ from .utils import url_xpath
 
 from .bills import MNBillScraper
 from .committees import MNCommitteeScraper
-from .people import MNPersonScraper
+from .people_new import MNPersonScraper
 from .vote_events import MNVoteScraper
 # from .events import MNEventScraper
 

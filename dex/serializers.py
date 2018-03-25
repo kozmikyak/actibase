@@ -61,16 +61,23 @@ class minBillSerializer(serializers.ModelSerializer):
         model = Bill
         fields = ('id', 'identifier', 'title')
         depth = 1
+
+
+class OrgMinSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Organization
+        fields = ('id', 'name' )
         
 
 class OrganizationsSerializer(serializers.ModelSerializer):
 #    person_members = BasePersonSerializer(many=True)
     memberships = MembershipOrgSerializer(many=True)
-    jurisdiction = JurisdictionSerializer()        
+    jurisdiction = JurisdictionSerializer()
+    parent = OrgMinSerializer()
 #    posts = PostSerializer(many=True)    
     class Meta:
         model = Organization
-        fields = ('id', 'name', 'image', 'classification', 'jurisdiction', 'memberships')
+        fields = ('id', 'name', 'image', 'classification', 'jurisdiction', 'memberships', 'parent')
         
 
 class OrgSerializer(serializers.ModelSerializer):
@@ -88,10 +95,6 @@ class OrgSerializer(serializers.ModelSerializer):
 ###########
 ## Bill  ##
 ###########
-class OrgMinSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Organization
-        fields = ('id', 'name' )
         
 
 class SponsorSerializer(serializers.RelatedField):
