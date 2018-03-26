@@ -86,6 +86,8 @@ class MNHouseScraper(Scraper):
                 print('Info list: ', info_list)
                 if info_list[0].startswith('Room:'):
                     m['room'] = info_list[1]
+                else:
+                    m['room'] = 'n/a'
                 if len(info_list) > 2:
                     if info_list[2].startswith('Chair:'):
                         chair = info_list[3]
