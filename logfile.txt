@@ -1,0 +1,91 @@
+[2018-03-22 10:52:45 -0500] [14923] [DEBUG] Current configuration:
+  config: None
+  bind: ['unix:/var/www/mn.actibase/run/gunicorn.sock']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  chdir: /var/www/mn.actibase/actibase
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logfile.txt
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: MnActibase
+  default_proc_name: Actibase.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f1834ace488>
+  on_reload: <function OnReload.on_reload at 0x7f1834ace620>
+  when_ready: <function WhenReady.when_ready at 0x7f1834ace7b8>
+  pre_fork: <function Prefork.pre_fork at 0x7f1834ace950>
+  post_fork: <function Postfork.post_fork at 0x7f1834aceae8>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f1834acec80>
+  worker_int: <function WorkerInt.worker_int at 0x7f1834acee18>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f1834ad7048>
+  pre_exec: <function PreExec.pre_exec at 0x7f1834ad71e0>
+  pre_request: <function PreRequest.pre_request at 0x7f1834ad7378>
+  post_request: <function PostRequest.post_request at 0x7f1834ad7488>
+  child_exit: <function ChildExit.child_exit at 0x7f1834ad7620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f1834ad77b8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f1834ad7950>
+  on_exit: <function OnExit.on_exit at 0x7f1834ad7ae8>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2018-03-22 10:52:45 -0500] [14923] [INFO] Starting gunicorn 19.7.1
+[2018-03-22 10:52:45 -0500] [14923] [DEBUG] Arbiter booted
+[2018-03-22 10:52:45 -0500] [14923] [INFO] Listening at: unix:/var/www/mn.actibase/run/gunicorn.sock (14923)
+[2018-03-22 10:52:45 -0500] [14923] [INFO] Using worker: sync
+[2018-03-22 10:52:45 -0500] [14930] [INFO] Booting worker with pid: 14930
+[2018-03-22 10:52:45 -0500] [14931] [INFO] Booting worker with pid: 14931
+[2018-03-22 10:52:45 -0500] [14934] [INFO] Booting worker with pid: 14934
+[2018-03-22 10:52:45 -0500] [14923] [DEBUG] 3 workers
+[2018-03-22 10:53:23 -0500] [14923] [INFO] Handling signal: int
+[2018-03-22 15:53:24 +0000] [14930] [INFO] Worker exiting (pid: 14930)
+[2018-03-22 15:53:24 +0000] [14934] [INFO] Worker exiting (pid: 14934)
+[2018-03-22 15:53:24 +0000] [14931] [INFO] Worker exiting (pid: 14931)
+[2018-03-22 10:53:24 -0500] [14923] [INFO] Shutting down: Master

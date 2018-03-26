@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import sys
-sys.path.insert(0, '/websrv/actibase')
+sys.path.insert(0, '/var/www/mn.actibase')
 #sys.path.insert(0, '/home/nkfx/ScreamFreely/ActiSites/MnActivist/server')
 import mnauth as KF
 
