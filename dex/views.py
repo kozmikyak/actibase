@@ -33,11 +33,9 @@ from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-local_tz = pytz.timezone('US/Central')
-
+tz_format = '%Y-%m-%dT$H:%M:%S+%H:%M'
 odt = datetime.now()
-ndt = odt.replace(tzinfo=pytz.utc).astimezone(local_tz)
-
+ndt = odt.strftime(tz_format)
 
 ############
 ## Events ##
@@ -46,7 +44,7 @@ ndt = odt.replace(tzinfo=pytz.utc).astimezone(local_tz)
 @authentication_classes([])
 class EventsAPIView(generics.ListAPIView):
     serializer_class = EventSerializer
-    queryset = Event.objects.filter(start_date__gte=datetime.now())
+    queryset = Event.objects.filter(start_date__gte=ndt)
     queryset = queryset.order_by('start_date')
 
 
