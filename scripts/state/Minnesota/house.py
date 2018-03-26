@@ -102,6 +102,8 @@ class MNHouseScraper(Scraper):
                         elif chair.startswith('Rep.') or chair.startswith('Sen.'):
                             cname = pull_middle_name(chair[4:].strip())
                             m['chair'] = [cname.strip()]
+                else:
+                    m['chair'] = None
             
             bill_rows = c.xpath(('.//*/table[@class="cal_bills"]/tbody/tr'))
             print('Bills: ', bill_rows)
