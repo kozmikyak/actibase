@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import pytz
 
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, Http404
@@ -31,6 +32,11 @@ from rest_framework import generics
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
+
+local_tz = pytz.timezone('US/Central')
+
+odt = datetime.now()
+ndt = odt.replace(tzinfo=pytz.utc).astimezone(local_tz)
 
 
 ############
