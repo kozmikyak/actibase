@@ -64,7 +64,11 @@ class MNCommsScraper(Scraper):
             m = {}
             m['notice'] = c.xpath('.//p/span[@class="cal_special"]/text()')
             print(c.xpath('.//h3/*'))
-            m['title'] = c.xpath('.//h3/a/text()')[0]
+            title = c.xpath('.//h3/a/text()')
+            if len(title) == 0:
+                continue
+            else:
+                m['title'] = title[0]
             m['link'] = c.xpath('.//h3/a/@href')[0]
             info_div = c.xpath('.//div[@class="calendar_p_indent"]')[0]
             print('one info div')

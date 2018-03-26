@@ -71,7 +71,11 @@ class MNHouseScraper(Scraper):
             else:
                 m['title'] = c.xpath('.//h3/text()')[0]
                 m['link'] = None
-            info_div = c.xpath('.//*[@class="calendar_p_indent"]')[0]
+            info_div = c.xpath('.//*[@class="calendar_p_indent"]')
+            if len(info_div) == 0:
+                pass
+            else:
+                info_div = info_div[0]
             print('Info Div: ', info_div)
             if len(info_div) > 0:
                 info_list = info_div.xpath('.//text()')
@@ -82,19 +86,20 @@ class MNHouseScraper(Scraper):
                 print('Info list: ', info_list)
                 if info_list[0].startswith('Room:'):
                     m['room'] = info_list[1]
-                if info_list[2].startswith('Chair:'):
-                    chair = info_list[3]
-                    if ',' in chair:
-                        chairs = chair.replace('\xa0', '').split(',')
-                        nchairs = []
-                        for chair in chairs:
-                            if chair.startswith('Rep.') or chair.startswith('Sen.'):
-                                cname = pull_middle_name(chair[4:])
-                                nchairs.append(cname.strip())
-                        m['chair'] = nchairs
-                    elif chair.startswith('Rep.') or chair.startswith('Sen.'):
-                        cname = pull_middle_name(chair[4:].strip())
-                        m['chair'] = [cname.strip()]
+                if len(info_list) > 2:
+                    if info_list[2].startswith('Chair:'):
+                        chair = info_list[3]
+                        if ',' in chair:
+                            chairs = chair.replace('\xa0', '').split(',')
+                            nchairs = []
+                            for chair in chairs:
+                                if chair.startswith('Rep.') or chair.startswith('Sen.'):
+                                    cname = pull_middle_name(chair[4:])
+                                    nchairs.append(cname.strip())
+                            m['chair'] = nchairs
+                        elif chair.startswith('Rep.') or chair.startswith('Sen.'):
+                            cname = pull_middle_name(chair[4:].strip())
+                            m['chair'] = [cname.strip()]
             
             bill_rows = c.xpath(('.//*/table[@class="cal_bills"]/tbody/tr'))
             print('Bills: ', bill_rows)
